@@ -30,7 +30,7 @@ body {
     }
 }
 
-/*A slight change*/
+
 /* Light mode (Default) */
 
 @media (prefers-color-scheme: light) {
@@ -38,6 +38,34 @@ body {
         background-color: var(--light);
         color: var(--dark);
     }
+}
+
+
+/* Header */
+
+header {
+    
+}
+
+
+/* Intro (if needed. Keep checking, otherwise remove!) */
+
+intro {
+    
+}
+
+
+/* Main */
+
+main {
+    
+}
+
+
+/* Footer */
+
+footer {
+    
 }
 
 
