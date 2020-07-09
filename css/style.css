@@ -25,8 +25,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
     body{
-        background-color: --dark;
-        color: --light;
+        background-color: var(--dark);
+        color: var(--light);
     }
 }
 
@@ -35,8 +35,8 @@ body {
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color: --light;
-        color: --dark;
+        background-color: var(--light);
+        color: var(--dark);
     }
 }
 
