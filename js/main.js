@@ -22,11 +22,9 @@ jQuery(document).ready(function(){
 /* Preliminary JS for variable font slider */
 
 document.getElementById("slider-wght").addEventListener("input", function () {
-
     let axisValue = document.getElementById("slider-wght").value;
 
     document.getElementById("testarea").style.fontWeight = axisValue;
 
     document.getElementById("value-wght").innerText = axisValue;
-
 });
