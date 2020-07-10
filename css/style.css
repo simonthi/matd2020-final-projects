@@ -4,13 +4,24 @@
     /* Colours */
     --light: #ffffff;
     --dark: #242433;
-    
+    --grey: #EEEEEE;
+
     /* Spaces */
     --spaceS: 12px;
     --spaceM: 24px;
     --spaceL: 48px;
     --spaceXL: 96px;
     --spaceXXL: 128px;
+
+    /* Font sizes */
+    --h1: 72px;
+    --h2: 36px;
+    --h3: 24px;
+
+    /* Sizes (Logo etc.) */
+    --small: 24px;
+    --medium: 48px;
+    --large: 72px;
 }
 
 html {
@@ -26,15 +37,43 @@ body {
     scroll-behavior: smooth;
     width: 100vw;
     overflow-x: hidden;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+ul,li { 
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0;
 }
 
 
 /* Dark mode */
 
 @media (prefers-color-scheme: dark) {
-    body{
-        background-color: var(--dark);
-        color: var(--light);
+    :root {
+        /* Colours */
+        --light: #242433;
+        --dark: #ffffff;
     }
 }
 
@@ -42,38 +81,209 @@ body {
 /* Light mode (Default) */
 
 @media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--light);
-        color: var(--dark);
+    :root {
+        /* Colours */
+        --light: #ffffff;
+        --dark: #242433;
     }
+}
+
+
+/* Spacers */
+
+.spaceXL {
+    margin-bottom: var(--spaceXL);
 }
 
 
 /* Header */
 
 header {
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: var(--spaceXL);
+    width: 100vw;
+    background-color: var(--light);
+    position: fixed;
+}
+
+.logo {
+    height: var(--large);
+    width: auto;
+    justify-content: flex-end;
+    align-self: center;
+    display: flex;
+    margin-left: var(--spaceM);
+}
+
+.menuBtn {
+    font-size: var(--h3);
+    height: auto;
+    justify-content: flex-end;
+    align-self: center;
+    display: flex;
+    margin-right: var(--spaceM);
+}
+
+.menuContent{
+    display: grid;
+    position: absolute;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    background-color: var(--light);
+    padding: var(--spaceM);
+    margin-top: var(--spaceXL);
+    transition: 0.3s ease-in;
+    pointer-events: none;
+}
+
+.showMenu {
+    display: grid;
+    opacity: 1;
+    pointer-events: all !important;
+}
+
+
+.menuFonts {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.showMenu .menuFonts a {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+    animation-delay: 0.3s;
+}
+
+.menuLinks {
+    grid-column: 2;
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: var(--spaceM);
+}
+
+.showMenu .menuLinks a {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+    animation-delay: 0.6s;
 }
 
 
 /* Intro (if needed. Keep checking, otherwise remove!) */
 
 intro {
-    
+
 }
 
 
 /* Main */
 
-main {
-    
+.gridContainer{
+    display: grid;
+    margin: var(--spaceM) auto;
+    padding: 0 15px;
+    padding-right: 15px: 
+        width: 100%;
+    max-width: 1000px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: var(--spaceM);
+    grid-row-gap: var(--spaceM);
+}
+
+.headingContainer {
+    display: grid;
+    grid-column: span 4;
+    margin: 0;
+}
+
+.description {
+    margin: var(--spaceXL);
+}
+
+.bio, 
+.negative,
+.colophon {
+    padding: var(--spaceXL);
+}
+
+.negative {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.full-width { 
+    width: 100%;
+}
+
+.one {
+    grid-column: span 1;
+}
+
+.two {
+    grid-column: span 2;
+}
+
+.three {
+    grid-column: span 3;
+}
+
+.four {
+    grid-column: span 4;
 }
 
 
 /* Footer */
 
 footer {
-    
+    display: grid;
+    grid-template-areas: ". footer .";
+}
+
+footer div {
+    grid-area: footer;
+    display: grid;
+}
+
+footer div{
+    grid-template-columns: 50% 20% 20% 10%;
+    grid-template-areas:
+        "colophon teams-1 teams-2 teams-3";
+}
+
+footer #colophon {
+    grid-area: colophon;
+}
+
+footer #teams-1 {
+    grid-area: teams-1;
+}
+
+footer #teams-2 {
+    grid-area: teams-2;
+}
+
+footer #teams-3 {
+    grid-area: teams-3;
+}
+
+.colophon {
+    background-color: var(--grey);
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 
