@@ -28,3 +28,32 @@ document.getElementById("slider-wght").addEventListener("input", function () {
 
     document.getElementById("value-wght").innerText = axisValue;
 });
+
+
+/* Adapted solution from w3schools: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown */
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function menu() {
+    document.getElementById("menuOverlay").classList.toggle("showMenu");
+    if (document.getElementById("menuText").innerHTML=="Menu"){
+        document.getElementById("menuText").innerHTML="&uarr;";
+    }
+    else {
+        document.getElementById("menuText").innerHTML="Menu";
+    }
+}
+
+// Close the dropdown if the user clicks outside of it
+function closeMenu() {
+    if (!event.target.matches('.menuBtn') && !event.target.matches('.menuContent')) {
+        var dropdowns = document.getElementsByClassName("menuContent");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('showMenu')) {
+                openDropdown.classList.remove('showMenu');
+            }
+        }
+        document.getElementById("menuText").innerHTML="Menu";
+    }
+}
