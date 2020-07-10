@@ -1,8 +1,16 @@
 /* Standarad setup */
 
 :root {
+    /* Colours */
     --light: #ffffff;
     --dark: #242433;
+    
+    /* Spaces */
+    --spaceS: 12px;
+    --spaceM: 24px;
+    --spaceL: 48px;
+    --spaceXL: 96px;
+    --spaceXXL: 128px;
 }
 
 html {
