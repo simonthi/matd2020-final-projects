@@ -66,6 +66,9 @@ ul,li {
     padding:0;
 }
 
+a {
+    text-decoration: none;
+}
 
 /* Dark mode */
 
@@ -92,7 +95,7 @@ ul,li {
 /* Spacers */
 
 .spaceXL {
-    margin-bottom: var(--spaceXL);
+    padding-bottom: var(--spaceXL);
 }
 
 
